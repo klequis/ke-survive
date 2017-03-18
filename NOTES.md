@@ -6,3 +6,13 @@
 148 bytes - size
 {0} - entry chunk ID
 [built] - the way it was generated
+
+
+## commands
+````
+// See what is running on port 8080
+$ netstat -na | grep 8080
+
+// Get the ip of your machine
+$ ifconfig | grep inet
+````
