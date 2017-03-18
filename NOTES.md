@@ -1,4 +1,4 @@
-
+Current position: https://survivejs.com/webpack/developing/composing-configuration/
 
 [0] ./app/component.js 148 bytes {0} [built]
 [0] - ID of the entry asset
