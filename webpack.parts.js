@@ -14,6 +14,23 @@ exports.devServer = ({ host, port } = {}) => ({
   },
 });
 
+exports.loadImages = ({ include, exclude, options } = {}) => ({
+  module: {
+    rules: [
+      {
+        test: /\.(png|jpg|svg)$/,
+        include,
+        exclude,
+
+        use: {
+          loader: 'url-loader',
+          options,
+        },
+      },
+    ],
+  },
+});
+
 exports.lintCSS = ({ include, exclude }) => ({
   module: {
     rules: [
