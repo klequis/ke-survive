@@ -1,7 +1,7 @@
 body {
   background: blue;
   background-image: url('./img/background.h2o.jpg');
-  background-repeat:repeat;
+  background-repeat: repeat;
   color: white;
   display: flex;
 }

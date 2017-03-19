@@ -30,9 +30,10 @@ const commonConfig = merge([
       name: '[name].[ext]',
     },
   }),
+  parts.loadJavaScript({ include: PATHS.app }),
 ]);
 
-const productionConfig = () => merge([
+const productionConfig = merge([
   parts.extractCSS({
     use: [ 'css-loader', parts.autoprefix() ],
   }),
