@@ -14,6 +14,10 @@ exports.devServer = ({ host, port } = {}) => ({
   },
 });
 
+exports.generateSourceMaps = ({ type }) => ({
+  devtool: type,
+});
+
 exports.loadJavaScript = ({ include, exclude }) => ({
   module: {
     rules: [
