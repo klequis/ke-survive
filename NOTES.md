@@ -27,3 +27,6 @@ $ ifconfig | grep inet
 ## other projects
 - (webpack-starter)[https://github.com/webpack/react-starter]
 - (webpack-chain)[https://www.npmjs.com/package/webpack-chain]
+
+## Otherwise
+Loading chapter introduces no changes to the project.
