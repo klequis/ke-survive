@@ -25,6 +25,11 @@ const commonConfig = merge([
     ],
   },
   parts.lintCSS({ include: PATHS.app }),
+  parts.loadFonts({
+    options: {
+      name: '[name].[ext]',
+    },
+  }),
 ]);
 
 const productionConfig = () => merge([
