@@ -84,7 +84,7 @@
 /* 1 */
 /***/ (function(module, exports) {
 
-throw new Error("Module parse failed: /home/klequis/wk/survivejs/ke-survive/app/main.css Unexpected token (1:5)\nYou may need an appropriate loader to handle this file type.\n| body {\n|   background: blue;\n|   color: white;");
+throw new Error("Module parse failed: /home/klequis/wk/survivejs/ke-survive/app/main.css Unexpected token (1:5)\nYou may need an appropriate loader to handle this file type.\n| body {\n|   background: cornsilk;\n|   display: flex;");
 
 /***/ }),
 /* 2 */

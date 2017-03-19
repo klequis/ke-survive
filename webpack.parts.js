@@ -13,6 +13,15 @@ exports.devServer = ({ host, port } = {}) => ({
   },
 });
 
+exports.autoprefix = () => ({
+  loader: 'postcss-loader',
+  options: {
+    plugins: () => ([
+      require('autoprefixer'),
+    ]),
+  },
+});
+
 exports.loadCSS = ({ include, exclude } = {}) => ({
   module: {
     rules: [
