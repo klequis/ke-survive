@@ -5,3 +5,6 @@
 
 ## browserlist
 - research it
+
+## CSS
+- what about **css modules**
