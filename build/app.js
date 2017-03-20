@@ -1,16 +1,20 @@
-webpackJsonp([0],{
+webpackJsonp([1],{
 
 /***/ 18:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony default export */ __webpack_exports__["a"] = function () {
-  var text = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'Hello world';
-
   var element = document.createElement('div');
   element.className = 'fa fa-hand-spock-o fa-1g';
-  element.innerHTML = text;
-
+  element.innerHTML = 'Hello world';
+  element.onclick = function () {
+    __webpack_require__.e/* import() */(0).then(__webpack_require__.bind(null, 42)).then(function (lazy) {
+      element.textContent = lazy.default;
+    }).catch(function (err) {
+      console.error(err);
+    });
+  };
   return element;
 };
 
