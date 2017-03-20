@@ -3,7 +3,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 const glob = require('glob');
+
 const parts = require('./webpack.parts');
+
 const PATHS = {
   app: path.join(__dirname, 'app'),
   build: path.join(__dirname, 'build'),
@@ -77,6 +79,10 @@ const productionConfig = merge([
       name: '[name].[ext]',
     },
   }),
+  parts.setFreeVariable(
+    'process.env.NODE_ENV',
+    'production'
+  ),
 ]);
 
 const developmentConfig = merge([
@@ -85,7 +91,7 @@ const developmentConfig = merge([
       devtoolModuleFilenameTemplate: 'webpack:///[absolute-resource-path]',
     },
   },
- parts.generateSourceMaps({ type: 'cheap-module-eval-source-map' }),
+  parts.generateSourceMaps({ type: 'cheap-module-eval-source-map' }),
   parts.devServer({
     // Customize host/port here if needed
     host: process.env.HOST,

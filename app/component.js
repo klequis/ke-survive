@@ -1,7 +1,8 @@
-export default () => {
+export default (text = 'Hello world') => {
   const element = document.createElement('div');
+
   element.className = 'fa fa-hand-spock-o fa-1g';
-  element.innerHTML = 'Hello world';
+  element.innerHTML = text;
   element.onclick = () => {
     import('./lazy').then((lazy) => {
       element.textContent = lazy.default;
@@ -9,5 +10,6 @@ export default () => {
       console.error(err);
     });
   };
+
   return element;
 };
