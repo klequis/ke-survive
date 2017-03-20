@@ -1,3 +1,4 @@
+/*! getting-started-complete-18-g25d5635 */
 webpackJsonp([1],{
 
 /***/ 18:

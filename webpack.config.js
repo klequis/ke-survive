@@ -34,6 +34,8 @@ const commonConfig = merge([
 ]);
 
 const productionConfig = merge([
+  parts.clean(PATHS.build),
+  parts.attachRevision(),
   parts.extractBundles([
     {
       name: 'vendor',
