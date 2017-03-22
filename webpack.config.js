@@ -49,8 +49,10 @@ const productionConfig = merge([
     plugins: [
       new webpack.HashedModuleIdsPlugin(),
     ],
+    recordsPath: 'records.json',
   },
   parts.clean(PATHS.build),
+
   parts.minifyJavaScript(),
   parts.minifyCSS({
     options: {
@@ -71,6 +73,10 @@ const productionConfig = merge([
         resource.indexOf('node_modules') >= 0 &&
         resource.match(/\.js$/)
       ),
+    },
+    {
+      name: 'manifest',
+      minChunks: Infinity,
     },
   ]),
   parts.generateSourceMaps({ type: 'source-map' }),
