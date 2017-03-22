@@ -1,3 +1,0 @@
-/*! getting-started-complete-21-ga5ecd0e */
-webpackJsonp([1],{14:function(a,b,c){"use strict";b.a=function(){var d=document.createElement("div");return d.className="fa fa-hand-spock-o fa-1g",d.innerHTML="Hello world",d.onclick=function(){c.e(0).then(c.bind(null,39)).then(function(e){d.textContent=e.default}).catch(function(e){console.error(e)})},d}},15:function(a,b,c){"use strict";c.d(b,"a",function(){return e});var e=function(){return console.log("bake")}},16:function(){},17:function(){},18:function(){},38:function(a,b,c){"use strict";Object.defineProperty(b,"__esModule",{value:!0});var d=c(19),e=c.n(d),f=c(16),g=c.n(f),h=c(18),i=c.n(h),j=c(17),k=c.n(j),l=c(14),m=c(15);c.i(m.a)(),document.body.appendChild(c.i(l.a)())}},[38]);
-//# sourceMappingURL=app.js.map
