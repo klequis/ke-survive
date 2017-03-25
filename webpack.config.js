@@ -1,5 +1,4 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 const glob = require('glob');
@@ -13,19 +12,12 @@ const PATHS = {
 
 const commonConfig = merge([
   {
-    entry: {
-    app: PATHS.app,
-    },
     output: {
       path: PATHS.build,
       filename: '[name].js',
     },
-    plugins: [
-      new HtmlWebpackPlugin({
-        title: 'Webpack demo',
-      }),
-    ],
   },
+  // parts.lintJavaScript({ include: PATHS.app }),
   parts.lintCSS({ include: PATHS.app }),
   parts.loadFonts({
     options: {
@@ -52,16 +44,15 @@ const productionConfig = merge([
     recordsPath: 'records.json',
   },
   parts.clean(PATHS.build),
-
   parts.minifyJavaScript(),
   parts.minifyCSS({
     options: {
       discardComments: {
         removeAll: true,
+        // Run cssnano in safe mode to avoid
+        // potentially unsafe transformations.
+        safe: true,
       },
-      // Run cssnano in safe mode to avoid
-      // potentially unsafe transformations.
-      safe: true,
     },
   }),
   parts.attachRevision(),
@@ -115,9 +106,26 @@ const developmentConfig = merge([
 ]);
 
 module.exports = (env) => {
-  if (env === 'production') {
-      return merge(commonConfig, productionConfig);
-    }
+  const pages = [
+    parts.page({
+      title: 'Webpack demo',
+      entry: {
+        app: PATHS.app,
+      },
+      chunks: ['app', 'manifest', 'vendor'],
+    }),
+    parts.page({
+      title: 'Another demo',
+      path: 'another',
+      entry: {
+        another: path.join(PATHS.app, 'another.js'),
+      },
+      chunks: ['another', 'manifest', 'vendor'],
+    }),
+  ];
+  const config = env === 'production' ?
+    productionConfig :
+    developmentConfig;
 
-    return merge(commonConfig, developmentConfig);
+  return merge([commonConfig, config].concat(pages));
 };

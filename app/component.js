@@ -1,5 +1,5 @@
 export default (text = 'Hello world') => {
-const element = document.createElement('div');
+  const element = document.createElement('div');
 
   element.className = 'fa fa-hand-spock-o fa-1g';
   element.innerHTML = text;
@@ -10,5 +10,6 @@ const element = document.createElement('div');
       console.error(err);
     });
   };
+
   return element;
 };
